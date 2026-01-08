@@ -7,4 +7,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './header.component.html',
 
 })
-export class HeaderComponent { }
+export class HeaderComponent {
+  pagesList = [
+    { title: "Pokedex", route: "/pokedex" },
+    { title: "Builder", route: "/builder" }
+  ];
+}
