@@ -1,8 +1,8 @@
 <footer class="w-full h-30 bg-[#dc2626] border-b border-red-700 flex flex-col justify-center items-center text-center p-2.5">
-    <div class="mb-2.5">
+    <div class="mb-2.5 flex gap-5"> 
         @for (page of pagesList; track $index) {
             <a [routerLink]="page.route" class="text-[14px] font-bold text-[#ffffff] px-1 pt-1 border-b border-transparent hover:border-white transition-colors">{{ page.title }}</a>
         }
     </div>
-    <p class="text-white text-[14px]">© {{ year }} TacticsDex. Data provided by <a class="text-blue-400" href="https://pokeapi.co/">PokeAPI</a></p>
+    <p class="text-white text-[14px]">© {{ year }} TacticsDex. Data provided by <a class="text-blue-400 hover:text-blue-300" href="https://pokeapi.co/" >PokeAPI</a></p>
 </footer>

@@ -16,7 +16,7 @@ export class FeaturesComponent {
     {
       title: 'Team Builder',
       description: 'Craft the perfect team of 6. Assign moves, natures, and held items. Calculate type coverage and weaknesses instantly.',
-      iconName: 'groups'
+      iconName: 'family_star'
     },
     {
       title: 'Analytics',
