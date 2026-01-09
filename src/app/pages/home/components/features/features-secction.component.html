@@ -1,0 +1,14 @@
+<section class="bg-slate-500 block">
+    <h1 class="text-5xl font-bold text-center">Features</h1>
+    <div class="flex items-center justify-center gap-6 ">
+        @for (feature of featuresList; track $index) {
+            <app-feature-card
+            [title]="feature.title"
+            [description]="feature.description"
+            [iconName]="feature.iconName"
+            />
+        }
+    </div>
+
+
+</section>
