@@ -21,7 +21,10 @@ export const routes: Routes = [
                 path: 'pokedex',
                 component: PokedexPageComponent
             }
-
         ]
+    },
+    {
+        path: '**',
+        redirectTo: '',
     }
 ];
