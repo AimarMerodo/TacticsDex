@@ -1,4 +1,4 @@
-export const environments = {
+export const environment = {
     production: true,
     appName: "TacticsDex",
 
