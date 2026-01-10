@@ -9,3 +9,9 @@ export interface PokemonListResponse {
     previous: string;
     results: SmallPokemon[];
 }
+
+export interface SimplePokemon {
+    id: number,
+    name: string,
+    image: string
+}
