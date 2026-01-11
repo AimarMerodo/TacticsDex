@@ -11,7 +11,7 @@ export interface PokemonListResponse {
 }
 
 export interface SimplePokemon {
-    id: number,
+    id: string,
     name: string,
     image: string
 }

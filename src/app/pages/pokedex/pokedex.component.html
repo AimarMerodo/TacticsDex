@@ -1,1 +1,10 @@
-<p>pokedex.component works!</p>
+<section>
+    <app-filters-pokedex/>
+</section>
+
+<section class="w-full grid grid-cols-5 gap-5">
+    
+    @for (pokemon of pokemonsToShow(); track $index) {
+        <app-pokemon-card [name]="pokemon.name" [image]="pokemon.image"/>
+    }
+</section>

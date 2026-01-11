@@ -1,0 +1,19 @@
+<section class="flex">
+    <div class="relative w-full md:w-96 group bg-amber-200">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-red-600 transition-colors">search</span>
+        <input type="text" 
+                placeholder="Buscar Pokémon por nombre..." 
+                class="w-full pl-10 pr-4 py-3 bg-slate-100 border-2 border-transparent rounded-xl focus:bg-white focus:border-red-600 focus:outline-none transition-all placeholder:text-slate-400 font-medium">
+    </div>
+    <div>
+        <select id="genFilter">
+            <option value="GEN1">Gen1 (Kanto)</option>
+            <!-- @FOR DE LAS GENERACIONES -->
+        </select>
+        <select id="typesFilter">
+            <option value="fire">fire</option>
+            <!-- @FOR DE lOS TIPOS -->
+        </select>
+        
+    </div>
+</section>
