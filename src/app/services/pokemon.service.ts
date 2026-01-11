@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import type { PokemonListResponse, SmallPokemon, SimplePokemon } from '../interfaces/pokemon.interface';
+import type { PokemonListResponse, PokemonCard, SimplePokemon, PokemonDetailResponse } from '../interfaces/pokemon.interface';
 import { environment } from '@environments/environment';
 import { map, Observable } from 'rxjs';
 
@@ -29,4 +29,19 @@ export class PokemonService {
       })
     );
   }
+
+  getPokemonById(id: string): Observable<PokemonCard> {
+    return this.http.get<PokemonDetailResponse>(this.pokeApi + "pokemon/" + id).pipe(
+      map(response => {
+        return {
+          id: response.id,
+          name: response.name,
+          image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${response.id}.png`,
+          types: response.types.map(v => v.type.name)
+        }
+      }
+      )
+    )
+  }
+
 }

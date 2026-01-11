@@ -1,5 +1,26 @@
-<div class="bg-slate-200 w-50 h-50">
-    <img src="{{ image() }}" alt="{{ name() }}">
-    <h1> {{name()}} </h1>
-</div>
+<div class="relative overflow-hidden bg-white gap-2.5 shadow-xs w-60 h-70 flex flex-col justify-center items-center p-4 rounded-2xl hover:-translate-y-1 transition duration-300">
 
+    @if (pokemonDetails(); as details) {
+        <div 
+            class="absolute top-0 right-0 w-32 h-32 rounded-bl-full -mr-8 -mt-8"
+            [class]="typeColorsLight[details.types[0]] || typeColorsLight['unknown']">
+        </div>
+    }
+
+    <span class="self-start font-bold text-gray-400 relative z-10"> #{{pokemon().id }}</span>
+    
+    <img class="w-30 h-30 bg-transparent relative z-10" [src]="pokemon().image" [alt]="pokemon().name">
+    
+    <h1 class="text-xl font-bold relative z-10"> {{ pokemon().name }}</h1>
+    
+    <div class="flex gap-1 text-center relative z-10">
+        @if (pokemonDetails(); as details) {
+            @for (type of details.types; track $index) {
+                <span [class]="typeColors[type] || typeColors['unknown']" class="font-bold rounded-2xl w-20 py-1 text-white text-xs uppercase shadow-sm" >
+                    {{ type }}
+                </span>
+            }
+        }
+    </div>
+
+</div>

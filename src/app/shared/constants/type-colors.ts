@@ -1,0 +1,43 @@
+export const TYPE_COLORS: { [key: string]: string } = {
+    normal: 'bg-gray-400 text-white',
+    fire: 'bg-orange-500 text-white',
+    water: 'bg-blue-500 text-white',
+    electric: 'bg-yellow-400 text-slate-900',
+    grass: 'bg-green-500 text-white',
+    ice: 'bg-cyan-400 text-slate-900',
+    fighting: 'bg-red-700 text-white',
+    poison: 'bg-purple-500 text-white',
+    ground: 'bg-amber-600 text-white',
+    flying: 'bg-indigo-400 text-white',
+    psychic: 'bg-pink-500 text-white',
+    bug: 'bg-lime-500 text-white',
+    rock: 'bg-stone-500 text-white',
+    ghost: 'bg-violet-700 text-white',
+    dragon: 'bg-indigo-600 text-white',
+    steel: 'bg-slate-400 text-white',
+    fairy: 'bg-pink-400 text-white',
+    dark: 'bg-slate-800 text-white',
+    unknown: 'bg-slate-200 text-slate-800'
+};
+
+export const TYPE_COLORS_LIGHT: { [key: string]: string } = {
+    normal: 'bg-gray-300',
+    fire: 'bg-orange-100',
+    water: 'bg-blue-100',
+    electric: 'bg-yellow-100',
+    grass: 'bg-green-100',
+    ice: 'bg-cyan-100',
+    fighting: 'bg-red-100',
+    poison: 'bg-purple-300',
+    ground: 'bg-amber-200',
+    flying: 'bg-indigo-100',
+    psychic: 'bg-pink-100',
+    bug: 'bg-lime-200',
+    rock: 'bg-stone-100',
+    ghost: 'bg-violet-100',
+    dragon: 'bg-indigo-100',
+    steel: 'bg-slate-100',
+    fairy: 'bg-pink-100',
+    dark: 'bg-slate-100',
+    unknown: 'bg-slate-100'
+};

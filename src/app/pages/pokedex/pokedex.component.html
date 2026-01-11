@@ -1,10 +1,21 @@
-<section>
-    <app-filters-pokedex/>
-</section>
 
-<section class="w-full grid grid-cols-5 gap-5">
-    
-    @for (pokemon of pokemonsToShow(); track $index) {
-        <app-pokemon-card [name]="pokemon.name" [image]="pokemon.image"/>
-    }
+<section class="bg-[#e5e7eb]">
+    <app-filters-pokedex/>
+
+    <div class="mb-6 text-slate-500 text-xm font-medium">
+        Showing <span class="text-slate-900 font-bold">{{currentPage()}} - {{pokemonsRenderCounter()}}</span> of <span class="text-slate-900 font-bold">{{ allPokemonsCounter()}}</span> Pokémon
+    </div>
+
+
+    <section class="w-full grid grid-cols-5 gap-5">
+        @for (pokemon of pokemonsToShow(); track $index) {
+            <app-pokemon-card [pokemon]="pokemon" />
+        }
+    </section>
+
+    <div class="mt-12 flex justify-center">
+        <button (click)="nextPage()" class="bg-slate-900 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-red-600 hover:scale-105 transition-all shadow-xl shadow-slate-900/20 hover:shadow-red-600/30 flex items-center gap-3">
+            Load more Pokémon
+        </button>
+    </div>
 </section>

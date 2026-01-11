@@ -1,12 +1,25 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
+import type { SimplePokemon, PokemonCard } from 'src/app/interfaces/pokemon.interface';
+import { PokemonService } from 'src/app/services/pokemon.service';
+import { TYPE_COLORS, TYPE_COLORS_LIGHT } from 'src/app/shared/constants/type-colors';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
 })
 export class PokemonCardComponent {
+  typeColors = TYPE_COLORS
+  typeColorsLight = TYPE_COLORS_LIGHT
+  pokemon = input.required<SimplePokemon>()
+  pokemonDetails = signal<PokemonCard | null>(null)
 
-  name = input.required()
-  image = input.required()
+  private pokemonService = inject(PokemonService);
+  ngOnInit() {
+    const id = this.pokemon().id
+    this.pokemonService.getPokemonById(id).subscribe(data => {
+      this.pokemonDetails.set(data)
+    }
+    )
 
+  }
 }
