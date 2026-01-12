@@ -1,4 +1,4 @@
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, effect, inject, input, signal } from '@angular/core';
 import type { SimplePokemon, PokemonCard } from 'src/app/interfaces/pokemon.interface';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { TYPE_COLORS, TYPE_COLORS_LIGHT } from 'src/app/shared/constants/type-colors';
@@ -22,13 +22,26 @@ export class PokemonCardComponent {
   pokemonDetails = signal<PokemonCard | null>(null)
 
   private pokemonService = inject(PokemonService);
+
+  constructor() {
+    effect(() => {
+      const nextPage = this.pokemon()
+      const id = this.pokemon().id
+      this.pokemonService.getPokemonById(id).subscribe(data => {
+        this.pokemonDetails.set(data)
+      }
+      )
+
+    })
+  }
+
+
   ngOnInit() {
     const id = this.pokemon().id
     this.pokemonService.getPokemonById(id).subscribe(data => {
       this.pokemonDetails.set(data)
     }
     )
-
   }
 
 }
