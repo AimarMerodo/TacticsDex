@@ -24,24 +24,21 @@ export class PokemonCardComponent {
   private pokemonService = inject(PokemonService);
 
   constructor() {
-    effect(() => {
+    effect((onCleanup) => {
       const nextPage = this.pokemon()
       const id = this.pokemon().id
-      this.pokemonService.getPokemonById(id).subscribe(data => {
+      this.pokemonDetails.set(null)
+      const subscription = this.pokemonService.getPokemonById(id).subscribe(data => {
         this.pokemonDetails.set(data)
       }
       )
-
-    })
-  }
-
-
-  ngOnInit() {
-    const id = this.pokemon().id
-    this.pokemonService.getPokemonById(id).subscribe(data => {
-      this.pokemonDetails.set(data)
+      onCleanup(() => {
+        subscription.unsubscribe()
+      })
     }
+
     )
   }
+
 
 }
