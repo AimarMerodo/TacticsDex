@@ -1,5 +1,5 @@
 
-<section class="bg-[#e5e7eb]">
+<section class="bg-[#e5e7eb] w-full">
     <app-filters-pokedex/>
 
     <div class="mb-6 text-slate-500 text-xm font-medium">
@@ -7,7 +7,7 @@
     </div>
 
 
-    <section class="w-full grid grid-cols-5 gap-5">
+    <section class="max-w-7xl mx-auto grid grid-cols-5 gap-5 justify-items-center">
         @for (pokemon of pokemonsToShow(); track $index) {
             <app-pokemon-card [pokemon]="pokemon" />
         }

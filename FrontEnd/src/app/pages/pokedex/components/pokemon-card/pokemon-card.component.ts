@@ -2,9 +2,11 @@ import { Component, inject, input, signal } from '@angular/core';
 import type { SimplePokemon, PokemonCard } from 'src/app/interfaces/pokemon.interface';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { TYPE_COLORS, TYPE_COLORS_LIGHT } from 'src/app/shared/constants/type-colors';
+import { PokemonIdFormatPipe } from 'src/app/shared/pipes/pokemonIdFormat-pipe';
 
 @Component({
   selector: 'app-pokemon-card',
+  imports: [PokemonIdFormatPipe],
   templateUrl: './pokemon-card.component.html',
 })
 export class PokemonCardComponent {
