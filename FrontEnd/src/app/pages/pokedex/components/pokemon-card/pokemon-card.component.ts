@@ -8,8 +8,14 @@ import { PokemonIdFormatPipe } from 'src/app/shared/pipes/pokemonIdFormat-pipe';
   selector: 'app-pokemon-card',
   imports: [PokemonIdFormatPipe],
   templateUrl: './pokemon-card.component.html',
+  styles: [`
+    :host {
+      display: block;
+    }
+  `]
 })
 export class PokemonCardComponent {
+
   typeColors = TYPE_COLORS
   typeColorsLight = TYPE_COLORS_LIGHT
   pokemon = input.required<SimplePokemon>()
@@ -24,4 +30,5 @@ export class PokemonCardComponent {
     )
 
   }
+
 }

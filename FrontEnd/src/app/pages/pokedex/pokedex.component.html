@@ -7,9 +7,9 @@
     </div>
 
 
-    <section class="max-w-7xl mx-auto grid grid-cols-5 gap-5 justify-items-center">
+    <section class="max-w-7xl mx-auto grid grid-cols-5 gap-5 justify-items-center ">
         @for (pokemon of pokemonsToShow(); track $index) {
-            <app-pokemon-card [pokemon]="pokemon" />
+            <app-pokemon-card [pokemon]="pokemon" (click)="showPokemonDetails(pokemon)"/>
         }
     </section>
 

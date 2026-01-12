@@ -49,4 +49,10 @@ export class PokedexPageComponent implements OnInit {
     this.pokemonsToShow.set(this.allPokemons().slice(startLimit, endLimit));
     this.pokemonsRenderCounter.set(this.pokemonsToShow().length);
   }
+
+  showPokemonDetails(pokemon: SimplePokemon) {
+    console.log("Hola " + pokemon.name)
+  }
+
+
 }
