@@ -22,7 +22,7 @@ export const TYPE_COLORS: { [key: string]: string } = {
 
 export const TYPE_COLORS_LIGHT: { [key: string]: string } = {
     normal: 'bg-gray-300',
-    fire: 'bg-orange-100',
+    fire: 'bg-red-200',
     water: 'bg-blue-100',
     electric: 'bg-yellow-100',
     grass: 'bg-green-100',
@@ -33,7 +33,7 @@ export const TYPE_COLORS_LIGHT: { [key: string]: string } = {
     flying: 'bg-indigo-100',
     psychic: 'bg-pink-100',
     bug: 'bg-lime-200',
-    rock: 'bg-stone-100',
+    rock: 'bg-stone-300',
     ghost: 'bg-violet-100',
     dragon: 'bg-indigo-100',
     steel: 'bg-slate-100',

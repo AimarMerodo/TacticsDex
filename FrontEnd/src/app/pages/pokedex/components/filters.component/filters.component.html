@@ -11,8 +11,10 @@
             <!-- @FOR DE LAS GENERACIONES -->
         </select>
         <select id="typesFilter">
-            <option value="fire">fire</option>
-            <!-- @FOR DE lOS TIPOS -->
+            <option value="" disabled selected>Types</option>
+             @for (type of typesOfPokemons | async; track $index) {
+                <option value="{{type.name}}">{{type.name}}</option>
+             }
         </select>
         
     </div>

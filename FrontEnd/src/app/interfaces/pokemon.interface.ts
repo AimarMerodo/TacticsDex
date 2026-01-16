@@ -37,3 +37,17 @@ export interface PokemonTypeSlot {
         name: string;
     };
 }
+
+// Interfaces para los tipos de pokemon (planta, fuego, ect...)
+
+export interface TypesOfPokemon {
+    name: string;
+    url: string;
+}
+
+export interface TypesListResponse {
+    count: number;
+    next: string;
+    previous: string;
+    results: TypesOfPokemon[];
+}

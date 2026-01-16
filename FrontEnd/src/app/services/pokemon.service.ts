@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import type { PokemonListResponse, PokemonCard, SimplePokemon, PokemonDetailResponse } from '../interfaces/pokemon.interface';
+import type { PokemonListResponse, PokemonCard, SimplePokemon, PokemonDetailResponse, TypesOfPokemon, TypesListResponse } from '../interfaces/pokemon.interface';
 import { environment } from '@environments/environment';
 import { map, Observable } from 'rxjs';
 
@@ -43,5 +43,20 @@ export class PokemonService {
       )
     )
   }
+
+  getAllTypes(): Observable<TypesOfPokemon[]> {
+    return this.http.get<TypesListResponse>(this.pokeApi + "type").pipe(
+      map(response => {
+        return response.results.map<TypesOfPokemon>(type => {
+          return {
+            name: type.name,
+            url: type.url
+          }
+        });
+      })
+    );
+  }
+
+
 
 }
