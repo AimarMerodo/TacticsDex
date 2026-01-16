@@ -51,3 +51,17 @@ export interface TypesListResponse {
     previous: string;
     results: TypesOfPokemon[];
 }
+
+// Interfaces para las generaciones de pokemon
+
+export interface GenOfPokemon {
+    name: string;
+    url: string;
+}
+
+export interface GenListResponse {
+    count: number;
+    next: string;
+    previous: string;
+    results: GenOfPokemon[];
+}

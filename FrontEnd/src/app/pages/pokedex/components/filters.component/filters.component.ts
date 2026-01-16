@@ -11,4 +11,5 @@ export class FiltersComponent {
   private PokemonService = inject(PokemonService);
 
   typesOfPokemons = this.PokemonService.getAllTypes();
+  gensOfPokemons = this.PokemonService.getAllGens();
 }

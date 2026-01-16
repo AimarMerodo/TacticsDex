@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import type { PokemonListResponse, PokemonCard, SimplePokemon, PokemonDetailResponse, TypesOfPokemon, TypesListResponse } from '../interfaces/pokemon.interface';
+import type { PokemonListResponse, PokemonCard, SimplePokemon, PokemonDetailResponse, TypesOfPokemon, TypesListResponse, GenListResponse, GenOfPokemon } from '../interfaces/pokemon.interface';
 import { environment } from '@environments/environment';
 import { map, Observable } from 'rxjs';
 
@@ -56,6 +56,20 @@ export class PokemonService {
       })
     );
   }
+
+  getAllGens(): Observable<GenOfPokemon[]> {
+    return this.http.get<GenListResponse>(this.pokeApi + "generation").pipe(
+      map(response => {
+        return response.results.map<GenOfPokemon>(type => {
+          return {
+            name: type.name,
+            url: type.url
+          }
+        });
+      })
+    );
+  }
+
 
 
 

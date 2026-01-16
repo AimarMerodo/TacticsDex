@@ -1,4 +1,4 @@
-<section>
+<section class="flex">
     <div class="relative w-full md:w-96 group bg-amber-200">
         <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-red-600 transition-colors">search</span>
         <input type="text" 
@@ -7,8 +7,10 @@
     </div>
     <div>
         <select id="genFilter">
-            <option value="GEN1">Gen1 (Kanto)</option>
-            <!-- @FOR DE LAS GENERACIONES -->
+            <option value="" disabled selected>Generations</option>
+             @for (gen of gensOfPokemons | async; track $index) {
+                <option value="{{gen.name}}">{{gen.name}}</option>
+             }
         </select>
         <select id="typesFilter">
             <option value="" disabled selected>Types</option>
