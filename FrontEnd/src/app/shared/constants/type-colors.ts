@@ -41,3 +41,26 @@ export const TYPE_COLORS_LIGHT: { [key: string]: string } = {
     dark: 'bg-slate-100',
     unknown: 'bg-slate-100'
 };
+
+export const HOVER_TEXT_COLORS: { [key: string]: string } = {
+    normal: 'group-hover:text-gray-500',
+    fire: 'group-hover:text-red-600',
+    water: 'group-hover:text-blue-600',
+    electric: 'group-hover:text-yellow-500',
+    grass: 'group-hover:text-green-600',
+    ice: 'group-hover:text-cyan-500',
+    fighting: 'group-hover:text-red-800',
+    poison: 'group-hover:text-purple-600',
+    ground: 'group-hover:text-amber-700',
+    flying: 'group-hover:text-indigo-500',
+    psychic: 'group-hover:text-pink-600',
+    bug: 'group-hover:text-lime-600',
+    rock: 'group-hover:text-yellow-800',
+    ghost: 'group-hover:text-indigo-900',
+    dragon: 'group-hover:text-violet-700',
+    steel: 'group-hover:text-slate-500',
+    dark: 'group-hover:text-gray-800',
+    fairy: 'group-hover:text-pink-400',
+    unknown: 'group-hover:text-gray-400',
+    shadow: 'group-hover:text-slate-900'
+};

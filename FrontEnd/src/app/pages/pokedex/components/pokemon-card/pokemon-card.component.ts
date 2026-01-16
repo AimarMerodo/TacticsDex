@@ -1,7 +1,7 @@
 import { Component, effect, inject, input, signal } from '@angular/core';
 import type { SimplePokemon, PokemonCard } from 'src/app/interfaces/pokemon.interface';
 import { PokemonService } from 'src/app/services/pokemon.service';
-import { TYPE_COLORS, TYPE_COLORS_LIGHT } from 'src/app/shared/constants/type-colors';
+import { TYPE_COLORS, TYPE_COLORS_LIGHT, HOVER_TEXT_COLORS } from 'src/app/shared/constants/type-colors';
 import { PokemonIdFormatPipe } from 'src/app/shared/pipes/pokemonIdFormat-pipe';
 
 @Component({
@@ -18,6 +18,7 @@ export class PokemonCardComponent {
 
   typeColors = TYPE_COLORS
   typeColorsLight = TYPE_COLORS_LIGHT
+  hoverTextColors = HOVER_TEXT_COLORS
   pokemon = input.required<SimplePokemon>()
   pokemonDetails = signal<PokemonCard | null>(null)
 
